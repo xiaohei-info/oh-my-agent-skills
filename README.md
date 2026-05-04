@@ -1,10 +1,16 @@
 # oh-my-agent-skills
 
+[![Release](https://img.shields.io/github/v/release/xiaohei-info/oh-my-agent-skills?display_name=tag)](https://github.com/xiaohei-info/oh-my-agent-skills/releases)
+[![License](https://img.shields.io/github/license/xiaohei-info/oh-my-agent-skills)](LICENSE)
+[![Last Commit](https://img.shields.io/github/last-commit/xiaohei-info/oh-my-agent-skills)](https://github.com/xiaohei-info/oh-my-agent-skills/commits/main)
+
 A curated open-source bundle of **agent methodologies** and **Hermes-compatible skills** for building stronger AI workflows.
 
 This repository is not a monolithic framework and not a raw export of one local skill directory. It is a **curated public package of reusable operating methods** for people building agent runtimes, skill libraries, research workflows, chat-native automations, and compiled-knowledge systems.
 
 For Chinese readers: see [README.zh-CN.md](README.zh-CN.md).
+
+![oh-my-agent-skills social preview](assets/social-preview.png)
 
 ## Why this repo exists
 
@@ -102,7 +108,12 @@ docs/
   adoption-guide.md
   bundles.md
   portability-notes.md
+  social-preview.md
   source-map.md
+```
+
+assets/
+  social-preview.png
 ```
 
 ## Bundles
@@ -189,7 +200,10 @@ If adoption mainly adds ceremony, duplicates stronger local workflows, or turns 
 - [`docs/adoption-guide.md`](docs/adoption-guide.md) — how to adopt the bundles
 - [`docs/bundles.md`](docs/bundles.md) — bundle-by-bundle overview
 - [`docs/portability-notes.md`](docs/portability-notes.md) — what is Hermes-native vs portable
+- [`docs/social-preview.md`](docs/social-preview.md) — social preview asset notes
 - [`docs/source-map.md`](docs/source-map.md) — source-to-public bundle mapping
+- [`SECURITY.md`](SECURITY.md) — how to report security-sensitive issues
+- [`CODE_OF_CONDUCT.md`](CODE_OF_CONDUCT.md) — participation expectations
 
 ## Contributing
 
