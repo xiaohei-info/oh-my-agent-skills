@@ -105,6 +105,7 @@ Before publishing:
 
 Common surfaces include:
 - README -> human-facing overview and adoption hook
+- multi-language README entry links when more than one language is shipped
 - optional agent loader docs such as `AGENTS.md`
 - optional compressed runtime guidance such as `SOUL.md`
 - memory-boundary guidance when relevant
@@ -112,6 +113,24 @@ Common surfaces include:
 - deployment or implementation docs that explain rollout order
 
 Not every repo needs every surface, but every shipped surface must have a clear purpose.
+
+When packaging a **unified public repository from an existing local skill library**:
+- organize skills into a small number of class-level bundles rather than dumping a flat directory tree
+- copy the **public package from the source skill directories**, not the other way around; keep the local/private originals untouched
+- preserve support files with each skill (`references/`, `templates/`, `scripts/`, `assets/`)
+- normalize private examples in the copied public version: machine paths, wrapper binaries, private vault names, host-specific policy wording
+- add repo-level surfaces that explain the collection, not just the individual skills; a strong default is `README.md`, `AGENTS.md`, a bundle map, portability notes, and a source map
+
+For a compact packaging checklist and recommended bundle/doc layout, see `references/public-skill-bundle-packaging.md`.
+
+After the first public push succeeds, do a **public-repo polish pass** before calling the package truly handoff-ready:
+- add community-health surfaces such as `CONTRIBUTING.md`, `.github/ISSUE_TEMPLATE/*`, and `.github/pull_request_template.md`
+- add governance surfaces such as `SECURITY.md` and `CODE_OF_CONDUCT.md` when the repo is meant for outside collaboration
+- add a `CHANGELOG.md` and cut an explicit initial release tag instead of leaving the repo in an unversioned “just pushed” state
+- add bundle-level `README.md` entrypoints when the repo groups many skills into thematic directories
+- add a social-preview asset to the repo itself (for example `assets/social-preview.png`) plus a short doc explaining intended usage
+- remember that GitHub's repository social preview card may still require a manual upload in repository settings even when the image asset is committed in-repo; do not assume the README image automatically becomes the repo card
+- update repo metadata after structure stabilizes: description, topics, and release notes
 
 ### 3. Make README hybrid, not overloaded
 
@@ -121,6 +140,7 @@ README should:
 - cite upstream conceptual lineage when relevant
 - keep detailed rollout procedures in deeper docs
 - optionally include a concise `For Agents` tail
+- when multiple languages exist, put neutral language-switch links near the top of the README instead of special-casing one language as an afterthought
 
 README should not:
 - become one giant system prompt
