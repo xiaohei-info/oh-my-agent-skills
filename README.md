@@ -6,92 +6,137 @@ Languages: [English](README.md) | [简体中文](README.zh-CN.md)
 [![License](https://img.shields.io/github/license/xiaohei-info/oh-my-agent-skills)](LICENSE)
 [![Last Commit](https://img.shields.io/github/last-commit/xiaohei-info/oh-my-agent-skills)](https://github.com/xiaohei-info/oh-my-agent-skills/commits/main)
 
-A curated open-source bundle of **agent methodologies** and **Hermes-compatible skills** for building stronger AI workflows.
+**Installable agent skills and workflow patterns for common failures in AI systems.**
 
-This repository is not a monolithic framework and not a raw export of one local skill directory. It is a **curated public package of reusable operating methods** for people building agent runtimes, skill libraries, research workflows, chat-native automations, and compiled-knowledge systems.
+Use this repository when you want to make an agent more reliable without rebuilding your whole stack. You can adopt **one skill**, **one bundle**, or the **full pack** depending on the problem you want to fix.
+
+It is especially useful for teams and operators who need stronger execution discipline, cleaner subagent delegation, better chat-native automation outputs, more reusable skills, and more maintainable knowledge workflows.
 
 ![oh-my-agent-skills social preview](assets/social-preview.png)
 
-## Why this repo exists
+## What problems this repo helps fix
 
-Most agent stacks do not fail because they cannot call a model or run tools. They fail because they lack:
-- a stable definition of completion
-- a disciplined debugging method
-- bounded delegation contracts for child agents
-- a way to turn repeated workflows into reusable assets
-- human-readable automation outputs instead of internal dumps
-- a maintainable structure for knowledge compilation
+Start here if your agent or workflow has one of these failure modes:
 
-This repository packages methods that address those gaps.
+- it says “done” without proof
+- debugging turns into guess-and-check
+- subagents drift, overlap, or need tighter controller discipline
+- cron / alert messages are technically correct but painful to read in chat
+- research quality varies because tool choice is inconsistent
+- notes pile up, but never become a durable compiled knowledge layer
 
-## Signature operating ideas
+## Start small: one skill, one bundle, or the full pack
 
-What makes this repo distinctive is not just the file tree. It is the operating model behind the skills.
+You do **not** need to install everything.
 
-- **Skills are operational assets, not prompt scraps** — a good skill is reusable procedural memory with trigger conditions, execution steps, pitfalls, and verification expectations.
-- **Execution quality comes from discipline, not just capability** — strong model/tool access is not enough; you need explicit completion standards, debugging discipline, and verification gates.
-- **Multi-agent systems need controllers, not just more agents** — delegation only compounds value when task shape, scope boundaries, and verification roles are explicit.
-- **Automation output should be optimized for human consumption** — recurring cron jobs, alerts, and checks should default to short, actionable, chat-readable output.
-- **Knowledge bases should be compiled, not merely accumulated** — raw source space and compiled durable knowledge should be separated, with ingest and lint as first-class workflows.
-- **Public packaging matters** — a useful local skill library becomes far more valuable when it is structured, de-privatized, and published as a reusable bundle.
+- **One skill** — fix one sharp problem fast
+  - Example: `verification-before-completion`
+- **One bundle** — improve one class of workflows
+  - Example: `engineering-execution/`
+- **Full pack** — curate a broader Hermes-compatible skill library
 
-## Operating model in one page
+The repository is intentionally modular so you can mix and match only what your runtime and team actually need.
 
-### Existential purpose
-Package a small set of agent methods that materially improve how agent systems execute, delegate, verify, package skills, and maintain knowledge.
+## Good first picks by need
 
-### Economic model
-The repo creates value when a team can reuse one of these skills or methods instead of re-deriving the workflow from scratch each time.
+### If your agent claims success too early
+Start with:
+- `engineering-execution/verification-before-completion`
+- `engineering-execution/systematic-debugging`
 
-### North star
-**Verified leverage per unit of spend** — more real output, less rework, less ambiguity, less coordination waste.
+### If multi-agent delegation gets messy
+Start with:
+- `multi-agent-control/subagent-first`
+- `multi-agent-control/subagent-collaboration-workflow`
 
-### Compounding mechanism
-Every good workflow can become a reusable asset:
-- a skill
-- a support reference
-- a template
-- a repeatable controller pattern
-- a packaging doctrine others can adopt
+### If cron or monitoring messages are unreadable in chat
+Start with:
+- `chatops-and-ops/user-friendly-cron-messages`
+- `chatops-and-ops/ops-sentry`
 
-### Completion standard
-A method in this repo is only “good” if it is:
-- understandable by another human or agent
-- structured for reuse
-- explicit about when to use it
-- explicit about how to verify outcomes
+### If you want better reusable skill packaging
+Start with:
+- `skill-engineering/writing-skills`
+- `skill-engineering/external-hermes-skills-lifecycle`
+- `skill-engineering/skill-optimizer`
 
-### Drift-correction frame
-The collection stays healthy by:
-- bundling skills by class, not as a flat dump
-- preserving support files with each skill
-- normalizing private/local assumptions in the public copy
-- documenting portability limits instead of pretending universal compatibility
+### If you need stronger research or knowledge workflows
+Start with:
+- `research-and-reading/web-reading-router`
+- `research-and-reading/hv-analysis`
+- `knowledge-compilation/*`
 
-### Strongest worldview shift
-Treat the agent workflow itself as a product surface worth designing, packaging, reviewing, and publishing.
+## Quick install for Hermes
 
-## Quickstart
+### 1. Clone the repo
 
-If you only have this repo link and want a correct first pass:
+```bash
+git clone https://github.com/xiaohei-info/oh-my-agent-skills.git
+cd oh-my-agent-skills
+```
 
-1. Read this `README.md` for the high-level model.
-2. Read [`docs/adoption-guide.md`](docs/adoption-guide.md) to choose an adoption path.
-3. Read [`docs/bundles.md`](docs/bundles.md) to understand the thematic bundles.
-4. Read [`docs/portability-notes.md`](docs/portability-notes.md) before copying anything into another runtime.
-5. Install or adapt only the bundles you can actually support.
+### 2. Copy one skill into your Hermes skill library
 
-## Distinctive capabilities
+Example: install `verification-before-completion` only.
 
-This repo is especially useful if you need one or more of these capabilities:
+```bash
+mkdir -p ~/.hermes/skills/software-development
+cp -R skills/engineering-execution/verification-before-completion \
+  ~/.hermes/skills/software-development/
+```
 
-- **evidence-first completion** — `verification-before-completion`
-- **root-cause debugging discipline** — `systematic-debugging`
-- **controller-style subagent orchestration** — `subagent-first`, `subagent-collaboration-workflow`
-- **skill packaging and optimization** — `skill-optimizer`, `writing-skills`, `external-hermes-skills-lifecycle`
-- **chat-native cron and alert design** — `user-friendly-cron-messages`, `ops-sentry`
-- **web-reading tool routing and deep research** — `web-reading-router`, `hv-analysis`
-- **compiled knowledge maintenance for Obsidian-style vaults** — `karpathy-llm-wiki-obsidian`, `obsidian-inbox-to-wiki-ingest`, `obsidian-wiki-lint-triage`
+### 3. Or copy one full bundle when the destination category is shared
+
+Example: install the whole `engineering-execution` bundle.
+
+```bash
+mkdir -p ~/.hermes/skills/software-development
+cp -R skills/engineering-execution/verification-before-completion \
+  ~/.hermes/skills/software-development/
+cp -R skills/engineering-execution/systematic-debugging \
+  ~/.hermes/skills/software-development/
+```
+
+### 4. Use the source map for mixed-category bundles
+
+Public bundle folders are organized for browsing. Hermes install paths follow the skill's original category.
+
+Use [`docs/source-map.md`](docs/source-map.md) when you install bundles such as:
+- `multi-agent-control/`
+- `skill-engineering/`
+- `knowledge-compilation/`
+
+### 5. Preserve support files
+
+Always copy the whole skill directory, not only `SKILL.md`.
+
+That means preserving any bundled:
+- `references/`
+- `templates/`
+- `scripts/`
+- `assets/`
+
+## How to use these skills after install
+
+Once a skill is installed, call it deliberately in the task prompt.
+
+Examples:
+- “Use `verification-before-completion` before telling me this bug is fixed.”
+- “Use `subagent-first` to plan and delegate this feature.”
+- “Use `user-friendly-cron-messages` to rewrite this monitoring output for Telegram.”
+- “Use `web-reading-router` to choose the lightest reliable way to read this URL set.”
+
+## Use it even if you are not on Hermes
+
+Many skills are Hermes-native in syntax, but still portable in method.
+
+Typical translations:
+- `delegate_task` -> your child-agent / worker abstraction
+- `read_file/search_files/patch/write_file` -> your codebase tooling
+- `clarify` -> your user-interaction layer
+- `todo` -> your task planner or state tracker
+
+See [`docs/portability-notes.md`](docs/portability-notes.md) before adapting skills into another runtime.
 
 ## Repository layout
 
@@ -110,114 +155,64 @@ docs/
   portability-notes.md
   social-preview.md
   source-map.md
-```
 
 assets/
   social-preview.png
 ```
 
-## Bundles
+## Bundle overview
 
-### 1. Engineering execution
-Skills that enforce evidence-driven execution rather than guesswork.
-- `verification-before-completion`
-- `systematic-debugging`
+- **engineering-execution** — verification and debugging discipline
+- **multi-agent-control** — controller-side delegation patterns
+- **skill-engineering** — authoring, packaging, and improving reusable skills
+- **chatops-and-ops** — human-readable recurring automation and monitoring
+- **research-and-reading** — tool-routing and deep-analysis workflows
+- **knowledge-compilation** — inbox-to-wiki and compiled-knowledge maintenance
 
-### 2. Multi-agent control
-Controller-side workflows for delegation, bounded subagent handoffs, verification, and wave parallelism.
-- `subagent-first`
-- `subagent-collaboration-workflow`
+For a bundle-by-bundle guide, see [`docs/bundles.md`](docs/bundles.md).
 
-### 3. Skill engineering
-Methods for authoring, packaging, improving, and publishing reusable agent skills.
-- `skill-optimizer`
-- `writing-skills`
-- `external-hermes-skills-lifecycle`
+## Who this repo is for
 
-### 4. ChatOps and Ops
-Human-readable recurring alerts, cron outputs, and low-noise monitoring methods.
-- `user-friendly-cron-messages`
-- `ops-sentry`
-
-### 5. Research and reading
-Structured URL reading, deep research, and report-generation workflows.
-- `web-reading-router`
-- `hv-analysis`
-
-### 6. Knowledge compilation
-Inbox-to-wiki and lint/triage methods for maintaining compiled knowledge layers.
-- `karpathy-llm-wiki-obsidian`
-- `obsidian-inbox-to-wiki-ingest`
-- `obsidian-wiki-lint-triage`
-
-## Who this is for
-
-This repo is useful if you are:
+This repository is useful if you are:
 - building an AI agent runtime
 - curating a reusable skill library
 - trying to make multi-agent workflows less sloppy
-- packaging prompt/method assets for public reuse
+- packaging prompt / method assets for public reuse
 - designing chat-native cron or alerting systems
 - maintaining an Obsidian-style compiled knowledge base
 
-## How to use it
+## Why these skills are different
 
-### Option A — Use as a Hermes skill bundle
-Copy one or more skill directories into your Hermes skills directory, preserving each skill's support files (`references/`, `scripts/`, `templates/`, `assets/`).
+The strongest ideas in this repo are:
+- **evidence-first completion** instead of vague success claims
+- **root-cause debugging** instead of random fixes
+- **controller-style delegation** instead of unbounded agent swarms
+- **human-readable automation output** instead of internal dumps
+- **compiled knowledge maintenance** instead of raw note accumulation
+- **reusable skill packaging** instead of one-off prompts
 
-Typical install target:
-- `~/.hermes/skills/<category>/<skill-name>/`
+## Recommended reading path
 
-See [`docs/source-map.md`](docs/source-map.md) for the current bundle map.
-
-### Option B — Adapt the methods to another agent stack
-Even when a skill references Hermes tools, the underlying method is often portable:
-- `delegate_task` -> your child-agent or worker abstraction
-- `read_file/search_files/patch/write_file` -> your codebase tooling
-- `clarify` -> your user-interaction layer
-- `todo` -> your task planner / state tracker
-
-### Option C — Read it as an agent-methods library
-You do not have to install anything immediately. Many users will get value first by reading:
-- bundle overviews
-- portability notes
-- the individual `SKILL.md` files as design references
-
-## What good adoption looks like
-
-A good adoption of this repo should make your system:
-- more verification-driven
-- less sloppy in delegation
-- better at skill packaging and reuse
-- more readable in human-facing automation outputs
-- more explicit about source-space vs compiled-knowledge boundaries
-
-If adoption mainly adds ceremony, duplicates stronger local workflows, or turns into a giant prompt dump, it has gone wrong.
+1. Pick the problem you want to fix.
+2. Install one skill or one bundle.
+3. Read [`docs/adoption-guide.md`](docs/adoption-guide.md) for a deeper rollout path.
+4. Read [`docs/portability-notes.md`](docs/portability-notes.md) if you are adapting outside Hermes.
+5. Read the chosen skill's `SKILL.md` and support files before relying on it in production.
 
 ## Related docs
 
 - [`AGENTS.md`](AGENTS.md) — repository working rules for agent collaborators
-- [`docs/adoption-guide.md`](docs/adoption-guide.md) — how to adopt the bundles
-- [`docs/bundles.md`](docs/bundles.md) — bundle-by-bundle overview
+- [`docs/adoption-guide.md`](docs/adoption-guide.md) — modular adoption paths and install guidance
+- [`docs/bundles.md`](docs/bundles.md) — bundle-by-bundle problem/skill guide
 - [`docs/portability-notes.md`](docs/portability-notes.md) — what is Hermes-native vs portable
 - [`docs/social-preview.md`](docs/social-preview.md) — social preview asset notes
-- [`docs/source-map.md`](docs/source-map.md) — source-to-public bundle mapping
+- [`docs/source-map.md`](docs/source-map.md) — public bundle to original Hermes category mapping
 - [`SECURITY.md`](SECURITY.md) — how to report security-sensitive issues
 - [`CODE_OF_CONDUCT.md`](CODE_OF_CONDUCT.md) — participation expectations
 
 ## Contributing
 
 See [`CONTRIBUTING.md`](CONTRIBUTING.md).
-
-## For Agents
-
-If you are an adopting agent:
-1. read `README.md`
-2. read `docs/adoption-guide.md`
-3. read `docs/portability-notes.md`
-4. then install or emulate only the smallest useful bundle set
-
-Do not blindly copy every surface just because it exists.
 
 ## License
 
