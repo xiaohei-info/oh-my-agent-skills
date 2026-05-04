@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "prompt": "帮我修复 tests/auth/test_login.py 里失败的测试",
+    "expected": "应触发 Intent Gate → implementation → DELEGATE → 用 6-Section 结构，MUST NOT 禁止改 test assertions",
+    "category": "happy_path"
+  },
+  {
+    "id": 2,
+    "prompt": "看看 ~/.hermes 目录下有哪些 config 文件",
+    "expected": "应触发 Intent Gate → trivial (1-2 tools) → DIRECT → 直接执行 search_files 或 terminal ls",
+    "category": "edge_case"
+  },
+  {
+    "id": 3,
+    "prompt": "同时调研一下 auth 模块和 api 模块的代码结构，然后给我一个整合方案",
+    "expected": "应触发 Wave Parallel → Wave 1 调研两个模块，Wave 2 整合方案",
+    "category": "complex"
+  }
+]

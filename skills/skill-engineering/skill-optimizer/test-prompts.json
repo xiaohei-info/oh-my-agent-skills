@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "prompt": "优化 github-pr-workflow 这个 skill",
+    "expected": "应触发 skill-optimizer 流程：初始化 → 设计测试 prompt → 基线评估 → 优化循环 → 人工确认 → 保留或回滚。输出应包含 8 维评分、git diff、分数变化。",
+    "category": "happy_path"
+  },
+  {
+    "id": 2,
+    "prompt": "评估所有 skills 的质量",
+    "expected": "应只执行 Phase 0.5-1（评估不改），扫描 ~/.hermes/skills/*/SKILL.md，展示评分卡表格，列出每个 skill 的分数、结构短板、效果短板。",
+    "category": "scope_ambiguous"
+  },
+  {
+    "id": 3,
+    "prompt": "帮我改改 systematic-debugging，它效果不好",
+    "expected": "应识别为优化请求，先做基线评估找出问题维度，然后针对性改进，用 test-prompts 验证效果是否真的变好。",
+    "category": "specific_problem"
+  }
+]
