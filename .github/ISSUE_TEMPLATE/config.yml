@@ -1,0 +1,5 @@
+blank_issues_enabled: false
+contact_links:
+  - name: General discussion
+    url: https://github.com/xiaohei-info/oh-my-agent-skills/discussions
+    about: Use Discussions for open-ended questions, adoption ideas, and bundle strategy conversations.
