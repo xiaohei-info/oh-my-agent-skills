@@ -1,5 +1,7 @@
 # oh-my-agent-skills
 
+语言版本：[English](README.md) | [简体中文](README.zh-CN.md)
+
 一个面向公开复用的 **agent 方法论与 Hermes 兼容 skill 套件仓库**。
 
 这个仓库不是新的执行引擎，也不是某台机器上本地 `~/.hermes/skills` 的原样导出。它是一个经过整理、分组、脱敏和文档化的 **可复用 agent operating methods 公共包**。

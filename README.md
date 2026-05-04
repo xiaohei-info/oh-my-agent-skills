@@ -1,5 +1,7 @@
 # oh-my-agent-skills
 
+Languages: [English](README.md) | [简体中文](README.zh-CN.md)
+
 [![Release](https://img.shields.io/github/v/release/xiaohei-info/oh-my-agent-skills?display_name=tag)](https://github.com/xiaohei-info/oh-my-agent-skills/releases)
 [![License](https://img.shields.io/github/license/xiaohei-info/oh-my-agent-skills)](LICENSE)
 [![Last Commit](https://img.shields.io/github/last-commit/xiaohei-info/oh-my-agent-skills)](https://github.com/xiaohei-info/oh-my-agent-skills/commits/main)
@@ -7,8 +9,6 @@
 A curated open-source bundle of **agent methodologies** and **Hermes-compatible skills** for building stronger AI workflows.
 
 This repository is not a monolithic framework and not a raw export of one local skill directory. It is a **curated public package of reusable operating methods** for people building agent runtimes, skill libraries, research workflows, chat-native automations, and compiled-knowledge systems.
-
-For Chinese readers: see [README.zh-CN.md](README.zh-CN.md).
 
 ![oh-my-agent-skills social preview](assets/social-preview.png)
 
